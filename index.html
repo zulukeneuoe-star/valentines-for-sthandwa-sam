@@ -5,7 +5,7 @@
   <title>For Sthandwa Sam ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -19,7 +19,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 850px;
       margin: auto;
       padding: 40px 20px;
     }
@@ -27,7 +27,6 @@
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.4rem;
-      margin-bottom: 10px;
     }
 
     .message {
@@ -36,10 +35,30 @@
       margin: 25px 0;
     }
 
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
     .question {
       font-size: 1.5rem;
-      font-weight: 500;
       margin: 40px 0 25px;
+      font-weight: 500;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
     }
 
     button {
@@ -59,18 +78,9 @@
       transform: scale(1.05);
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-      margin: 30px 0;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 15px;
-      object-fit: cover;
-      height: 180px;
+    #noBtn {
+      background: #999;
+      position: absolute;
     }
 
     .hidden {
@@ -82,32 +92,26 @@
       margin-top: 40px;
     }
 
-    /* Floating hearts */
+    /* Hearts */
     .heart {
       position: fixed;
       bottom: -10px;
-      font-size: 20px;
+      font-size: 22px;
       animation: floatUp 4s linear forwards;
       color: #ff4d6d;
       pointer-events: none;
     }
 
     @keyframes floatUp {
-      from {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-100vh);
-        opacity: 0;
-      }
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Background music -->
+  <!-- Background Music -->
   <audio autoplay loop>
     <source src="love-instrumental.mp3" type="audio/mpeg">
   </audio>
@@ -122,26 +126,27 @@
 
       <p>
         I honestly did not expect to fall as deeply as I have for you. In the little time that we have gotten together,
-        I have fallen tremendously in love with all your quirks and flaws that it drives me crazy (and makes me feel somewhat easy
-        because yesass Siya bru, it really didn't take much eyy like ungiphethe bhoza yam).
+        I have fallen tremendously in love with all your quirks and flaws that it drives me crazy
+        (and makes me feel somewhat easy because yesass Siya bru, it really didn't take much eyy like ungiphethe bhoza yam).
       </p>
 
       <p>I love you so much my love and now I would like to ask you a very pressing question…</p>
     </div>
 
+    <!-- TWO PHOTOS ONLY -->
     <div class="gallery">
-      <!-- Replace these with your photo filenames -->
-      <img src="photo1.jpg" />
-      <img src="photo2.jpg" />
-      <img src="photo3.jpg" />
-      <img src="photo4.jpg" />
+      <img src="photo1.jpg" alt="Us">
+      <img src="photo2.jpg" alt="Us again">
     </div>
 
     <div class="question">
       MaCebisa! Will you do me the honour and be my Valentine?
     </div>
 
-    <button onclick="sayYes()">Of Course! My Neokiee 🙄❤️</button>
+    <div class="buttons">
+      <button onclick="sayYes()">Of Course! My Neokiee 🙄❤️</button>
+      <button id="noBtn">No 🙃</button>
+    </div>
 
     <div id="finalMessage" class="final hidden">
       💖 YAY!!! 💖<br><br>
@@ -155,8 +160,7 @@
     function sayYes() {
       document.getElementById("finalMessage").classList.remove("hidden");
 
-      // Heart animation
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 35; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
         heart.style.left = Math.random() * 100 + "vw";
@@ -164,43 +168,22 @@
         heart.innerHTML = "❤️";
         document.body.appendChild(heart);
 
-        setTimeout(() => {
-          heart.remove();
-        }, 5000);
+        setTimeout(() => heart.remove(), 5000);
       }
     }
+
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 250 - 125;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
   </script>
 
 </body>
 </html>
 
-<script>
-  function sayYes() {
-    document.getElementById("finalMessage").classList.remove("hidden");
-
-    // Heart animation
-    for (let i = 0; i < 30; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
-      heart.innerHTML = "❤️";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
-    }
-  }
-
-  const noBtn = document.getElementById("noBtn");
-
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  });
-</script>
 
 
 
