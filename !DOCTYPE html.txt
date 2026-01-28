@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Sthandwa Sam ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #ffc3d1);
+      color: #4a2c2a;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 25px 0;
+    }
+
+    .question {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 40px 0 25px;
+    }
+
+    button {
+      background: #d6336c;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      margin: 10px;
+    }
+
+    button:hover {
+      background: #b02555;
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      height: 180px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .final {
+      font-size: 1.4rem;
+      margin-top: 40px;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 20px;
+      animation: floatUp 4s linear forwards;
+      color: #ff4d6d;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="love-instrumental.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>Sthandwa Sam ❤️</h1>
+
+    <div class="message">
+      <p>Hello my love, I won't lie I feel so awkward doing this mainly because I would have loved to have been able to physically be there with you and ask you something truly important as the day of love is approaching.</p>
+
+      <p>I bet you did not think I would do this, hahaha, but I wanted to make it and make you feel as special and loved as possible regardless of the distance.</p>
+
+      <p>
+        I honestly did not expect to fall as deeply as I have for you. In the little time that we have gotten together,
+        I have fallen tremendously in love with all your quirks and flaws that it drives me crazy (and makes me feel somewhat easy
+        because yesass Siya bru, it really didn't take much eyy like ungiphethe bhoza yam).
+      </p>
+
+      <p>I love you so much my love and now I would like to ask you a very pressing question…</p>
+    </div>
+
+    <div class="gallery">
+      <!-- Replace these with your photo filenames -->
+      <img src="photo1.jpg" />
+      <img src="photo2.jpg" />
+      <img src="photo3.jpg" />
+      <img src="photo4.jpg" />
+    </div>
+
+    <div class="question">
+      MaCebisa! Will you do me the honour and be my Valentine?
+    </div>
+
+    <button onclick="sayYes()">Of Course! My Neokiee 🙄❤️</button>
+
+    <div id="finalMessage" class="final hidden">
+      💖 YAY!!! 💖<br><br>
+      Screenshot this and send it to me so I can scream properly 😭❤️<br><br>
+      I love you endlessly.<br><br>
+      — <strong>Neokieee</strong>
+    </div>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("finalMessage").classList.remove("hidden");
+
+      // Heart animation
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+        heart.innerHTML = "❤️";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<script>
+  function sayYes() {
+    document.getElementById("finalMessage").classList.remove("hidden");
+
+    // Heart animation
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+  }
+
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
